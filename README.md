@@ -1,24 +1,7 @@
 # clone-spotify-spotfelipe
 
 ## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
+Project done in VueJS, to make a spotify clone
 
 ### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Created by [Felipe henrique ferraresi](https://www.linkedin.com/in/felipe1181/).
