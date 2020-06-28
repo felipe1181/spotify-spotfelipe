@@ -29,6 +29,7 @@ import {
   QIntersection,
   QSpace,
   QImg,
+  QLinearProgress,
 } from 'quasar';
 
 Vue.use(Quasar, {
@@ -57,6 +58,7 @@ Vue.use(Quasar, {
     QIntersection,
     QSpace,
     QImg,
+    QLinearProgress,
   },
   directives: {},
   plugins: {},
