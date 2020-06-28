@@ -1,103 +1,94 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated class="glossy">
-      <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          @click="leftDrawerOpen = !leftDrawerOpen"
-          aria-label="Menu"
-          icon="fas fa-bars"
-        />
-
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
-      </q-toolbar>
+  <q-layout class="bg-SpotifySecondary" view="lHh lpR fFf">
+    <q-header elevated class="bg-primary text-white" height-hint="98">
+      <Header />
+      <q-tabs align="left">
+        <q-route-tab to="/page1" label="Page One" />
+        <q-route-tab to="/page2" label="Page Two" />
+        <q-route-tab to="/page3" label="Page Three" />
+      </q-tabs>
     </q-header>
 
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-      content-class="bg-grey-2"
-    >
-      <q-list>
-        <q-item-label header>Essential Links</q-item-label>
-        <q-item clickable tag="a" target="_blank" href="https://quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="fas fa-graduation-cap" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Docs</q-item-label>
-            <q-item-label caption>quasar.dev</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://github.com/quasarframework/">
-          <q-item-section avatar>
-            <q-icon name="fas fa-code" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Github</q-item-label>
-            <q-item-label caption>github.com/quasarframework</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://chat.quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="fas fa-comments" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Discord Chat Channel</q-item-label>
-            <q-item-label caption>chat.quasar.dev</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://forum.quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="far fa-clipboard" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Forum</q-item-label>
-            <q-item-label caption>forum.quasar.dev</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://twitter.com/quasarframework">
-          <q-item-section avatar>
-            <q-icon name="fab fa-twitter" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Twitter</q-item-label>
-            <q-item-label caption>@quasarframework</q-item-label>
-          </q-item-section>
-        </q-item>
-      </q-list>
+    <q-drawer show-if-above v-model="left" :width="230" side="left">
+      <Sidebar />
     </q-drawer>
 
-    <q-page-container>
-      <HelloWorld />
+    <q-page-container class="container-main-dashboard">
+      <router-view />
     </q-page-container>
+    <Footer />
   </q-layout>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import Header from '@/components/Header/Header.vue';
+import Footer from '@/components/Footer/Footer.vue';
+import Sidebar from '@/views/dashboard/pages/home/components/sidebar/Sidebar.vue';
 
 export default {
-  name: 'LayoutDefault',
-
-  components: {
-    HelloWorld,
-  },
-
   data() {
     return {
-      leftDrawerOpen: false,
+      left: false,
     };
+  },
+  components: {
+    Sidebar,
+    Header,
+    Footer,
   },
 };
 </script>
 
-<style>
+<style lang="scss">
+@import '~@/styles/quasar.sass';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+body {
+  overflow-y: hidden;
+}
+.container-main-dashboard {
+  overflow: hidden;
+}
+.bg-SpotifyPrimarySystem {
+  background-color: $spotufyPrimarySytem;
+}
+.color-SpotifyPrimarySystem {
+  color: $spotufyPrimarySytem;
+}
+.bg-SpotifyPrimary {
+  background-color: $spotifyPrimary;
+}
+.color-SpotifyPrimary {
+  color: $spotifyPrimary;
+}
+.bg-SpotifyPrimaryAlternative {
+  background-color: $spotifyPrimaryAlternative;
+}
+.color-SpotifyPrimaryAlternative {
+  color: $spotifyPrimaryAlternative;
+}
+.bg-SpotifySecondary {
+  background-color: $spotifySecondary;
+}
+.color-SpotifySecondary {
+  color: $spotifySecondary;
+}
+.bg-SpotifyTertiary {
+  background-color: $spotifyTertiary !important;
+}
+.color-SpotifyTertiary {
+  color: $spotifyTertiary;
+}
+.bg-SpotifyLight {
+  background-color: $spotifyLight;
+}
+.color-SpotifyLight {
+  color: $spotifyLight;
+}
+.bg-SpotifyDarkLight {
+  background-color: $spotifyDarkLight;
+}
+.color-SpotifyDarkLight {
+  color: $spotifyDarkLight;
+}
 </style>

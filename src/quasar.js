@@ -19,6 +19,17 @@ import {
   QItem,
   QItemSection,
   QItemLabel,
+  QAvatar,
+  QFooter,
+  QPageScroller,
+  QScrollArea,
+  QCard,
+  QCardSection,
+  QCardActions,
+  QIntersection,
+  QSpace,
+  QImg,
+  QLinearProgress,
 } from 'quasar';
 
 Vue.use(Quasar, {
@@ -37,11 +48,20 @@ Vue.use(Quasar, {
     QItem,
     QItemSection,
     QItemLabel,
+    QAvatar,
+    QFooter,
+    QPageScroller,
+    QScrollArea,
+    QCard,
+    QCardSection,
+    QCardActions,
+    QIntersection,
+    QSpace,
+    QImg,
+    QLinearProgress,
   },
-  directives: {
-  },
-  plugins: {
-  },
+  directives: {},
+  plugins: {},
   lang,
   iconSet,
 });
