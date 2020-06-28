@@ -60,6 +60,8 @@ export default {
 }
 .card-music .q-btn {
   position: absolute !important;
+  font-size: 8px;
+  padding: 8px;
   bottom: 15px;
   right: 15px;
   display: none;
