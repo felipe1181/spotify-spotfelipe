@@ -11,7 +11,7 @@
               <Player />
             </div>
           </div>
-          <div class="col-4">
+          <div class="col-4 q-my-auto">
             <VolumeControls />
           </div>
         </div>

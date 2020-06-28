@@ -1,9 +1,11 @@
 <template>
-  <div class="container">
-    <div>
-      <q-btn flat dense round icon="fas fa-random"></q-btn>
+  <div class="row items-center container">
+    <div class="offset-6 col-3">
+      <q-btn flat dense round icon="fas fa-list"></q-btn>
+      <q-btn flat dense round icon="fas fa-headphones"></q-btn>
+      <q-btn flat dense round icon="fas fa-volume-up"></q-btn>
     </div>
-    <div>
+    <div class="col-3">
       <q-linear-progress dark :value="0.3" color="black" />
     </div>
   </div>
@@ -15,12 +17,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.container {
-  display: flex;
-  flex-direction: row;
-  background-color: blue;
-}
-.container .content {
-}
-</style>
+<style scoped></style>
