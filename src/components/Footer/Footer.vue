@@ -8,13 +8,11 @@
           </div>
           <div class="col-4">
             <div class="absolute-center">
-              Player
+              <Player />
             </div>
           </div>
           <div class="col-4">
-            <div class="float-right">
-              Volume
-            </div>
+            <VolumeControls />
           </div>
         </div>
       </q-toolbar-title>
@@ -24,11 +22,15 @@
 
 <script>
 import ActiveAlbum from '@/views/player/pages/active-album/ActiveAlbum.vue';
+import Player from '@/views/player/pages/player/Player.vue';
+import VolumeControls from '@/views/player/pages/volume-controls/VolumeControls.vue';
 
 export default {
   name: 'Footer',
   components: {
     ActiveAlbum,
+    Player,
+    VolumeControls,
   },
 };
 </script>
